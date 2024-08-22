@@ -33,7 +33,7 @@
             <h2 class="text-center mb-5">Catálogo de Productos</h2>
             <div class="row">
                 <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="producto card border-0 shadow">
+                    <div class="producto card border-0 shadow" data-toggle="modal" data-target="#productoModal" data-title="Producto 1" data-description="Descripción detallada del Producto 1" data-images='["./images/producto1_1.jpg", "./images/producto1_2.jpg"]'>
                         <img src="./images/producto1.jpeg" class="card-img-top" alt="Imagen del Producto 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">Producto 1</h5>
@@ -42,17 +42,17 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="producto card border-0 shadow">
-                        <img src="./images/producto2.jpeg" class="card-img-top" alt="Imagen del Producto 2">
+                    <div class="producto card border-0 shadow" data-toggle="modal" data-target="#productoModal" data-title="Producto 1" data-description="Descripción detallada del Producto 1" data-images='["./images/producto1_1.jpg", "./images/producto1_2.jpg"]'>
+                        <img src="./images/producto2.jpeg" class="card-img-top" alt="Imagen del Producto 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">Producto 2</h5>
-                            <p class="card-text">$20.00</p>
+                            <p class="card-text">$10.00</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="producto card border-0 shadow">
-                        <img src="./images/producto3.jpeg" class="card-img-top" alt="Imagen del Producto 3">
+                    <div class="producto card border-0 shadow" data-toggle="modal" data-target="#productoModal" data-title="Producto 1" data-description="Descripción detallada del Producto 1" data-images='["./images/producto1_1.jpg", "./images/producto1_2.jpg"]'>
+                        <img src="./images/producto3.jpeg" class="card-img-top" alt="Imagen del Producto 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">Producto 3</h5>
                             <p class="card-text">$10.00</p>
@@ -60,8 +60,8 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="producto card border-0 shadow">
-                        <img src="./images/producto4.jpeg" class="card-img-top" alt="Imagen del Producto 4">
+                    <div class="producto card border-0 shadow" data-toggle="modal" data-target="#productoModal" data-title="Producto 1" data-description="Descripción detallada del Producto 1" data-images='["./images/producto1_1.jpg", "./images/producto1_2.jpg"]'>
+                        <img src="./images/producto4.jpeg" class="card-img-top" alt="Imagen del Producto 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">Producto 4</h5>
                             <p class="card-text">$10.00</p>
@@ -69,8 +69,8 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="producto card border-0 shadow">
-                        <img src="./images/producto5.jpeg" class="card-img-top" alt="Imagen del Producto 5">
+                    <div class="producto card border-0 shadow" data-toggle="modal" data-target="#productoModal" data-title="Producto 1" data-description="Descripción detallada del Producto 1" data-images='["./images/producto1_1.jpg", "./images/producto1_2.jpg"]'>
+                        <img src="./images/producto5.jpeg" class="card-img-top" alt="Imagen del Producto 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">Producto 5</h5>
                             <p class="card-text">$10.00</p>
@@ -78,8 +78,8 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="producto card border-0 shadow">
-                        <img src="./images/producto6.jpeg" class="card-img-top" alt="Imagen del Producto 6">
+                    <div class="producto card border-0 shadow" data-toggle="modal" data-target="#productoModal" data-title="Producto 1" data-description="Descripción detallada del Producto 1" data-images='["./images/producto1_1.jpg", "./images/producto1_2.jpg"]'>
+                        <img src="./images/producto6.jpeg" class="card-img-top" alt="Imagen del Producto 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">Producto 6</h5>
                             <p class="card-text">$10.00</p>
@@ -87,15 +87,15 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="producto card border-0 shadow">
-                        <img src="./images/producto7.jpeg" class="card-img-top" alt="Imagen del Producto 7">
+                    <div class="producto card border-0 shadow" data-toggle="modal" data-target="#productoModal" data-title="Producto 1" data-description="Descripción detallada del Producto 1" data-images='["./images/producto1_1.jpg", "./images/producto1_2.jpg"]'>
+                        <img src="./images/producto7.jpeg" class="card-img-top" alt="Imagen del Producto 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">Producto 7</h5>
                             <p class="card-text">$10.00</p>
                         </div>
                     </div>
                 </div>
-                <!-- Añadir más productos según sea necesario -->
+                <!-- Repetir para los demás productos -->
             </div>
         </div>
     </section>
@@ -115,9 +115,40 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Modal para producto -->
+    <div class="modal fade" id="productoModal" tabindex="-1" role="dialog" aria-labelledby="productoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productoModalLabel">Título del Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselProducto" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Imágenes del carrusel -->
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselProducto" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselProducto" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Siguiente</span>
+                        </a>
+                    </div>
+                    <p class="mt-3" id="productoDescripcion">Descripción del producto...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
