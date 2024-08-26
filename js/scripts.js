@@ -1,21 +1,43 @@
-$(document).ready(function () {
-    $('#productoModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget);
-        var title = button.data('title');
-        var description = button.data('description');
-        var images = button.data('images');
+document.addEventListener('DOMContentLoaded', function () {
+    // Seleccionar todas las tarjetas de producto
+    var productos = document.querySelectorAll('.producto');
 
-        var modal = $(this);
-        modal.find('.modal-title').text(title);
-        modal.find('#productoDescripcion').text(description);
+    // Iterar sobre cada tarjeta de producto
+    productos.forEach(function (producto) {
+        producto.addEventListener('click', function () {
+            // Obtener los datos del producto desde los atributos data-*
+            var titulo = this.getAttribute('data-title');
+            var descripcion = this.getAttribute('data-description');
+            var imagenes = JSON.parse(this.getAttribute('data-images'));
 
-        var carouselInner = modal.find('.carousel-inner');
-        carouselInner.empty();
+            // Actualizar el título del modal
+            document.getElementById('productoModalLabel').textContent = titulo;
 
-        images.forEach(function (image, index) {
-            var itemClass = index === 0 ? 'carousel-item active' : 'carousel-item';
-            var imgElement = '<div class="' + itemClass + '"><img class="d-block w-100" src="' + image + '" alt="Imagen ' + (index + 1) + '"></div>';
-            carouselInner.append(imgElement);
+            // Actualizar la descripción del modal
+            document.getElementById('productoDescripcion').textContent = descripcion;
+
+            // Obtener el contenedor del carrusel
+            var carouselInner = document.getElementById('carouselInner');
+
+            // Limpiar el contenido previo del carrusel
+            carouselInner.innerHTML = '';
+
+            // Agregar nuevas imágenes al carrusel
+            imagenes.forEach(function (imagen, index) {
+                var carouselItem = document.createElement('div');
+                carouselItem.className = 'carousel-item' + (index === 0 ? ' active' : '');
+                
+                var img = document.createElement('img');
+                img.src = imagen;
+                img.className = 'd-block w-100';
+                img.alt = 'Imagen del ' + titulo;
+
+                carouselItem.appendChild(img);
+                carouselInner.appendChild(carouselItem);
+            });
+
+            // Mostrar el modal
+            $('#productoModal').modal('show');
         });
     });
 });
